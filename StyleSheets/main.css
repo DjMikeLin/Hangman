@@ -24,6 +24,13 @@ ol{
 li{
     height: 3.3%;
     margin: 0 0 0.546% 0; 
+    background-color: #099bbc;
+    display: flex;
+    justify-content: center;
+}
+
+li > div{
+    width: 20%;
 }
 
 img{
