@@ -52,3 +52,9 @@ img{
     width: 100%;
     height: 30%;
 }
+
+.postClick{
+    pointer-events: none;
+    color: lightgray;
+    background-color: darkgray;
+}

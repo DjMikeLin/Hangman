@@ -38,6 +38,7 @@ function makeAlphabet(game){
         
         item.click(() => {
             item.unbind("click");
+            item.attr('class', 'postClick');
             game.currLetter = item.text();
 
             if(!game.currWord.includes(game.currLetter)){
