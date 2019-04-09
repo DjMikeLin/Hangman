@@ -19,3 +19,10 @@ img{
     width: 100%;
     height: 70%;
 }
+
+.currWord{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30%;
+}

@@ -8,6 +8,7 @@ class Game{
         this.currLetter = '';
         this.currWord = this.words[Math.floor((Math.random() * this.words.length))].toUpperCase();
         this.guesses = 0;
+        this.placeHolders = '';
     }
     
     changeImage(path){
@@ -18,6 +19,7 @@ class Game{
 $(() => {
     let currGame = new Game();
     makeAlphabet(currGame);
+    currGame.placeHolders = makePlaceholders(currGame.currWord);
     console.log(currGame.currWord);
 });
 
@@ -33,8 +35,26 @@ function makeAlphabet(game){
                 game.changeImage(game.imagePaths[game.guesses + 1]);
                 game.guesses++;
             }
+            else{
+                game.placeHolders.forEach(e => {
+                    if(e.value === game.currLetter)
+                        e.tag.text(e.value);
+                });
+            }
         });
 
         $('ol').append(item); 
     }
+}
+//Make a paragragh tag for every character in word and append it to the .currWord container
+function makePlaceholders(word){
+    let arr = word.split('');
+    let items = [];
+    
+    arr.forEach(e => {
+        let item = $('<p></p>');
+        items.push({tag: item, value: e});
+        $('.currWord').append(item);
+    });
+    return items;
 }
