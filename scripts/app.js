@@ -21,7 +21,7 @@ class Game{
         if(win)
             $('aside').append('<p>You\'ve Won!</p>');
         else
-            $('aside').append('<p>You\'ve Lost!');
+            $('aside').append('<p>You\'ve Lost! The movie was: '+ this.currWord +'</p>');
     }
 }
 
