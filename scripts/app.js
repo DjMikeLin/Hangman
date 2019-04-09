@@ -10,13 +10,18 @@ class Game{
         this.guesses = 0;
         this.placeHolders = '';
     }
-    
+    //Change 'src' of the only image to path
     changeImage(path){
         $('img').attr("src", path);
     }
-
-    endGame(){
+    //Hides the alphabet UI and replaces it with a game ending message
+    endGame(win){
         $('ol').hide();
+        
+        if(win)
+            $('aside').append('<p>You\'ve Won!</p>');
+        else
+            $('aside').append('<p>You\'ve Lost!');
     }
 }
 
@@ -45,7 +50,7 @@ function makeAlphabet(game){
                         e.tag.text(e.value);
                 });
             }
-            gameEnd(game);
+            checkGameEnd(game);
         });
 
         $('ol').append(item); 
@@ -64,10 +69,11 @@ function makePlaceholders(word){
     });
     return items;
 }
-
-function gameEnd(game){
+//End game conditions: if guessedWord is the hidden word and if user guessed wrong 6 times
+//Run game.endGame(boolean) if any of these conditions are true
+function checkGameEnd(game){
     if($('.currWord').text() === game.currWord)
-        game.endGame();
-    else if(game.guesses === 5)
-        console.log("You Lost");
+        game.endGame(true);
+    else if(game.guesses === 6)
+        game.endGame(false);
 }
