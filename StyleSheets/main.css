@@ -18,15 +18,23 @@ aside{
 ol{
     list-style: none;
     height: var(--main-height);
-    width: 100%;
+    width: 80%;
 }
 
 li{
     height: 3.3%;
     margin: 0 0 0.546% 0; 
     background-color: #099bbc;
+    border-radius: 100%;
+    font-weight: bolder;
+    color: white;
     display: flex;
     justify-content: center;
+}
+
+li:hover{
+    background-color: greenyellow; 
+    color: #480064;
 }
 
 li > div{
