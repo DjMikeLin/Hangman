@@ -2,9 +2,11 @@ class Game{
     constructor(){
         this.imagePaths = ['Images/Picture1.png', 'Images/Picture2.png', 'Images/Picture3.png', 
         'Images/Picture4.png', 'Images/Picture5.png', 'Images/Picture6.png', 'Images/Picture7.png'];
+        this.words = ['Joker', 'Us', 'Aquaman', 'Hellboy', 'After', 'Bumblebee', 'Aladdin',
+        'Venom', 'Hanna', 'Mirage', 'Split', 'Destroyer', 'It', 'Hereditary'];
         this.changeImage(this.imagePaths[0]);
         this.currLetter = '';
-        this.currWord = '';
+        this.currWord = this.words[Math.floor((Math.random() * this.words.length))];
         this.guesses = 0;
     }
     
@@ -15,8 +17,8 @@ class Game{
 
 $(() => {
     let currGame = new Game();
-    currGame.currWord = "Hello";
     makeAlphabet(currGame);
+    console.log(currGame.currWord);
 });
 
 function makeAlphabet(game){
@@ -25,7 +27,7 @@ function makeAlphabet(game){
         
         item.click(() => {
             item.unbind("click");
-            game.currLetter = item.text();
+            game.currLetter = item.text().toLowerCase();
 
             if(!game.currWord.includes(game.currLetter)){
                 game.changeImage(game.imagePaths[game.guesses + 1]);
