@@ -6,7 +6,7 @@ class Game{
         'Venom', 'Hanna', 'Mirage', 'Split', 'Destroyer', 'It', 'Hereditary'];
         this.changeImage(this.imagePaths[0]);
         this.currLetter = '';
-        this.currWord = this.words[Math.floor((Math.random() * this.words.length))];
+        this.currWord = this.words[Math.floor((Math.random() * this.words.length))].toUpperCase();
         this.guesses = 0;
     }
     
@@ -27,7 +27,7 @@ function makeAlphabet(game){
         
         item.click(() => {
             item.unbind("click");
-            game.currLetter = item.text().toLowerCase();
+            game.currLetter = item.text();
 
             if(!game.currWord.includes(game.currLetter)){
                 game.changeImage(game.imagePaths[game.guesses + 1]);
