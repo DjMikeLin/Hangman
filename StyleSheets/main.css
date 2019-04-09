@@ -1,3 +1,7 @@
+:root{
+    --main-height: 70%;
+}
+
 body{
     display: flex;
     flex-direction: row;
@@ -13,11 +17,18 @@ aside{
 
 ol{
     list-style: none;
+    height: var(--main-height);
+    width: 100%;
+}
+
+li{
+    height: 3.3%;
+    margin: 0 0 0.546% 0; 
 }
 
 img{
     width: 100%;
-    height: 70%;
+    height: var(--main-height);
 }
 
 .currWord{
