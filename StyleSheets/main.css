@@ -53,6 +53,18 @@ img{
     height: 30%;
 }
 
+.currWord > p{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    margin: 0 5px;
+    border-bottom: 5px solid black;
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
 .postClick{
     pointer-events: none;
     color: lightgray;
