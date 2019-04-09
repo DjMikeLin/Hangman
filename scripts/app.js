@@ -14,6 +14,10 @@ class Game{
     changeImage(path){
         $('img').attr("src", path);
     }
+
+    endGame(){
+        $('ol').hide();
+    }
 }
 
 $(() => {
@@ -41,12 +45,14 @@ function makeAlphabet(game){
                         e.tag.text(e.value);
                 });
             }
+            gameEnd(game);
         });
 
         $('ol').append(item); 
     }
 }
 //Make a paragragh tag for every character in word and append it to the .currWord container
+//Returns Array of Objects [{tag: , value: }...]
 function makePlaceholders(word){
     let arr = word.split('');
     let items = [];
@@ -57,4 +63,11 @@ function makePlaceholders(word){
         $('.currWord').append(item);
     });
     return items;
+}
+
+function gameEnd(game){
+    if($('.currWord').text() === game.currWord)
+        game.endGame();
+    else if(game.guesses === 5)
+        console.log("You Lost");
 }
