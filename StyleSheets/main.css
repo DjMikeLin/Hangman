@@ -108,8 +108,9 @@ img{
 }
 
 .animateWord{
-    animation-name: colorAnimation;
-    animation-iteration-count: infinite;
+    animation-name: colorAnimation 10s;
+    animation-fill-mode: both;
+    /* animation-iteration-count: infinite; */
 }
 
 @keyframes colorAnimation{
