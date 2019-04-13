@@ -5,6 +5,7 @@
 body{
     display: flex;
     flex-direction: row;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 header{
@@ -17,7 +18,18 @@ main{
 }
 
 aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgrey;
     width: 30%;
+}
+
+p{
+    font-size: 3em;
+    color: red;
+    background-color: rgb(32, 148, 249, .5);
+    border-radius: 5%;
 }
 
 ol{
@@ -51,6 +63,14 @@ img{
     height: var(--main-height);
 }
 
+.won{
+    background-image: url('../Images/wingame.gif');
+}
+
+.lose{
+    background-image: url('../Images/lose.gif');
+}
+
 .currWord{
     display: flex;
     flex-direction: row;
@@ -65,7 +85,6 @@ img{
     width: 100%;
     margin: 0 5px;
     border-bottom: 5px solid black;
-    font-family: 'Cabin Sketch', cursive;
     font-weight: bolder;
     font-size: 50px;
 }

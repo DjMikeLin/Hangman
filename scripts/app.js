@@ -19,9 +19,9 @@ class Game{
         $('ol').hide();
         
         if(win)
-            $('aside').append('<p>You\'ve Won!</p>');
+            $('aside').append('<p>You\'ve Won!</p>').attr('class', 'won');
         else
-            $('aside').append('<p>You\'ve Lost! The movie was: '+ this.currWord +'</p>');
+            $('aside').append('<p>You\'ve Lost! The movie was: '+ this.currWord +'</p>').attr('class', 'lose');
     }
 }
 
@@ -31,7 +31,7 @@ $(() => {
     currGame.placeHolders = makePlaceholders(currGame.currWord);
     console.log(currGame.currWord);
 });
-
+//Creates the alphabet for the user to click on
 function makeAlphabet(game){
     for(let i = 65; i <= 90; i++){
         let item = $('<li><div>'+ String.fromCharCode(i) +'</div></li>');
