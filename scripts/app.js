@@ -48,7 +48,7 @@ function makeAlphabet(game){
             else{
                 game.placeHolders.forEach(e => {
                     if(e.value === game.currLetter)
-                        e.tag.text(e.value);
+                        e.tag.text(e.value).attr('class', 'animateWord');
                 });
             }
             checkGameEnd(game);

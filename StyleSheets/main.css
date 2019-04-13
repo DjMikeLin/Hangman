@@ -106,3 +106,22 @@ img{
     color: lightgray;
     background-color: darkgray;
 }
+
+.animateWord{
+    animation-name: colorAnimation;
+    animation-iteration-count: 10s;
+}
+
+@keyframes colorAnimation{
+    0%       {font-size: 500px; color: whitesmoke;}
+    10%      {font-size: 100px; color: violet;}
+    20%      {font-size: 300px; color: magenta;}
+    30%      {font-size: 600px; color: maroon;}
+    40%      {font-size: 30px; color: mintcream;}
+    50%      {font-size: 300px; color: chartreuse;}
+    60%      {font-size: 60px; color: cornflowerblue;}
+    70%      {font-size: 400px; color: turquoise;}
+    80%      {font-size: 40px; color: indigo;}
+    90%      {font-size: 800px; color: orchid;}
+    100%     {font-size: 300px; color: hotpink;}
+}
