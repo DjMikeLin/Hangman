@@ -109,7 +109,7 @@ img{
 
 .animateWord{
     animation-name: colorAnimation;
-    animation-iteration-count: 10s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes colorAnimation{
