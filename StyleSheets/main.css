@@ -3,6 +3,7 @@
 }
 
 body{
+    height: 100vh;
     display: flex;
     flex-direction: row;
     font-family: 'Cabin Sketch', cursive;
@@ -17,6 +18,16 @@ main{
     width: 70%;
 }
 
+h1{
+    display: flex;
+    justify-content: center;
+    color: teal;
+    border: teal;
+    background-color: maroon;
+    border-style: dotted dashed;
+    border-width: 5px;
+}
+
 aside{
     display: flex;
     justify-content: center;
@@ -25,7 +36,7 @@ aside{
     width: 30%;
 }
 
-p{
+aside > p{
     font-size: 3em;
     color: red;
     background-color: rgb(32, 148, 249, .5);
@@ -87,6 +98,7 @@ img{
     border-bottom: 5px solid black;
     font-weight: bolder;
     font-size: 50px;
+    color: teal;
 }
 
 .postClick{
