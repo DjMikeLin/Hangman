@@ -97,8 +97,6 @@ img{
     margin: 0 5px;
     border-bottom: 5px solid black;
     font-weight: bolder;
-    font-size: 50px;
-    color: teal;
 }
 
 .postClick{
@@ -108,8 +106,9 @@ img{
 }
 
 .animateWord{
-    animation-name: colorAnimation 10s;
+    animation-name: colorAnimation;
     animation-fill-mode: both;
+    animation-duration: 10s;
     /* animation-iteration-count: infinite; */
 }
 
@@ -124,5 +123,5 @@ img{
     70%      {font-size: 400px; color: turquoise;}
     80%      {font-size: 40px; color: indigo;}
     90%      {font-size: 800px; color: orchid;}
-    100%     {font-size: 300px; color: hotpink;}
+    100%     {font-size: 50px; color: teal;}
 }
