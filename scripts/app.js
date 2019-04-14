@@ -5,29 +5,17 @@ class Game{
         this.words = ['Joker', 'Us', 'Aquaman', 'Hellboy', 'After', 'Bumblebee', 'Aladdin',
         'Venom', 'Hanna', 'Mirage', 'Split', 'Destroyer', 'It', 'Hereditary', 'Dumbo', 'Breakthrough',
         'Penguins', 'Snatch', 'Gladiator', 'Crash', 'Transformers', 'Limitless', 'Goodfellas', 'Ghostbusters'];
-        this.changeImage(this.imagePaths[0]);
+        this.changeImagePath = '';
         this.currLetter = '';
         this.currWord = this.words[Math.floor((Math.random() * this.words.length))].toUpperCase();
         this.guesses = 0;
         this.placeHolders = '';
     }
-    //Change 'src' of the only image to path
-    changeImage(path){
-        $('img').attr("src", path);
-    }
-    //Hides the alphabet UI and replaces it with a game ending message
-    endGame(win){
-        $('ol').hide();
-        
-        if(win)
-            $('aside').append('<p>You\'ve Won!</p>').attr('class', 'won');
-        else
-            $('aside').append('<p>You\'ve Lost! The movie was: '+ this.currWord +'</p>').attr('class', 'lose');
-    }
 }
 
 $(() => {
     let currGame = new Game();
+    changeImage(currGame.imagePaths[0]);
     makeAlphabet(currGame);
     currGame.placeHolders = makePlaceholders(currGame.currWord);
 });
@@ -42,7 +30,7 @@ function makeAlphabet(game){
             game.currLetter = item.text();
 
             if(!game.currWord.includes(game.currLetter)){
-                game.changeImage(game.imagePaths[game.guesses + 1]);
+                changeImage(game.imagePaths[game.guesses + 1]);
                 game.guesses++;
             }
             else{
@@ -74,7 +62,20 @@ function makePlaceholders(word){
 //Run game.endGame(boolean) if any of these conditions are true
 function checkGameEnd(game){
     if($('.currWord').text() === game.currWord)
-        game.endGame(true);
+        endGame(true);
     else if(game.guesses === 6)
-        game.endGame(false);
+        endGame(false);
+}
+//Change 'src' of the only image to path
+function changeImage(path){
+    $('img').attr("src", path);
+}
+//Hides the alphabet UI and replaces it with a game ending message
+function endGame(win){
+    $('ol').hide();
+    
+    if(win)
+        $('aside').append('<p>You\'ve Won!</p>').attr('class', 'won');
+    else
+        $('aside').append('<p>You\'ve Lost! The movie was: '+ this.currWord +'</p>').attr('class', 'lose');
 }
