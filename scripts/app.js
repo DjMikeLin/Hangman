@@ -29,7 +29,6 @@ $(() => {
     let currGame = new Game();
     makeAlphabet(currGame);
     currGame.placeHolders = makePlaceholders(currGame.currWord);
-    console.log(currGame.currWord);
 });
 //Creates the alphabet for the user to click on
 function makeAlphabet(game){
