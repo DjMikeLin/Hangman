@@ -20,6 +20,9 @@ Hangman web game application based on one word movies.
 ![No image found](Images/whiteboard.jpg)
 ![No image found](Images/classDiagram.jpg)
 
+## Game Link
+<http://linproject1.ddns.net/Hangman/>
+
 ## Wireframe
 ![No image found](Images/wireframe.jpg)
 
